@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const experience = [
+  {
+    date: "Actualmente...",
+    title: "CRUD en Java",
+    description: "",
+    link: "",
+  },
+  {
+    date: "Diciembre 2022",
+    title: "REST API",
+    description: "",
+    link: "",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-2">
+  {
+    experience.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

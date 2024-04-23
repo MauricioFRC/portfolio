@@ -1,0 +1,46 @@
+---
+import BriefcaseIcon from "../components/icons/BriefcaseIcon.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import Experience from "../components/Experience.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import Projects from "../components/Projects.astro";
+import Section from "../components/Section.astro";
+import Glow from "../components/icons/Glow.astro";
+---
+
+<Layout title="Portafolio Mauricio Ramírez">
+  <main class="px-4">
+    <Section class="py-44 pb-20">
+      <Hero />
+    </Section>
+
+    <Section id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7" />
+        Experiencia Personal
+      </h2>
+      <Experience />
+    </Section>
+
+    <Section id="proyectos">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </Section>
+
+    <Section id="sobre-mi">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        Sobre mí
+      </h2>
+    </Section>
+
+    <Section id="contacto">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        Contacto
+      </h2>
+    </Section>
+  </main>
+</Layout>

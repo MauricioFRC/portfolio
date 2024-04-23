@@ -1,0 +1,70 @@
+---
+import Badge from "../components/Badge.astro";
+import CSharpIcon from "./icons/CSharpIcon.astro";
+import IconContainer from "./icons/IconContainer.astro";
+import IntellijIDEAIcon from "./icons/IntelliJIDEAIcon.astro";
+import JavaIcon from "./icons/JavaIcon.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import MySqlIcon from "./icons/MySqlIcon.astro";
+import VSCodeIcon from "./icons/VSCodeIcon.astro";
+
+const TAGS = {
+  JAVA: {
+    name: "Java",
+    class: "text-black filter hover:drop-shadow-cs transition duration-100 ease-in-out",
+    icon: JavaIcon,
+  },
+  IDEA: {
+    name: "Idea",
+    class: "text-black filter hover:drop-shadow-cs transition duration-100 ease-in-out",
+    icon: IntellijIDEAIcon,
+  },
+  CSHARP: {
+    name: "C#",
+    class: "text-white filter hover:drop-shadow-cs transition duration-100 ease-in-out",
+    icon: CSharpIcon,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "text-black filter hover:drop-shadow-cs transition duration-100 ease-in-out",
+    icon: MySqlIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "CRUD",
+    description: "Crud usando C#, MySQL y Windows Forms",
+    link: "#",
+    github: "https://github.com/MauricioFRC/MauricioFRC",
+    image: "",
+    tags: [TAGS.CSHARP, TAGS.MYSQL],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-blue-400 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={`Imágen del proyecto ${image}`}
+      />
+      <ul class="flex flex-row mb-2 gap-x-2 pt-5">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 text-xs ${tag.class} py-1 px-2 `}
+            >
+              <tag.icon class="size-12" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </article>
+  ))
+}

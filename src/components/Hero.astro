@@ -1,0 +1,47 @@
+---
+import Badge from "../components/Badge.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import Social from "../components/Social.astro";
+import Glow from "./icons/Glow.astro";
+---
+
+<div class="flex items-center gap-x-5">
+  <Glow>
+    <img class="w-20 h-20" src="/avatar.webp" alt="MauricioFRC Logo" />
+  </Glow>
+  <a
+    href="https://www.linkedin.com/in/mauricio-ram%C3%ADrez-a50751239/"
+    target="_blank"
+    rel="noopener"
+    class="flex justify-center items-center hover:scale-105 transition-all"
+  >
+    <Badge>Disponible para trabajar</Badge>
+  </a>
+</div>
+<h1
+  class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-4 pt-6 lg:pt-4"
+>
+  Hola, Soy <span class="bg-clip-text bg-gradient-to-r from-indigo-500 to-blue-500 text-transparent">Mauricio Ramírez</span>
+</h1>
+<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+  Estudiante Universitario
+  <span class="text-red-400">y desarrollador Jr. Paraguayo.</span>
+</h2>
+<nav class="flex gap-x-5 mt-6 text-wrap rounded-full">
+  <Social href="https://www.linkedin.com/in/mauricio-ram%C3%ADrez-a50751239/">
+    <LinkedIn class="size-4 md:size-6" />
+    LinkedIn
+  </Social>
+
+  <Social href="https://www.github.com/MauricioFRC">
+    <GitHubIcon class="size-4 md:size-6" />
+    GitHub
+  </Social>
+
+  <Social href="mailto:mauricio.ramirez.cardozo0@gmail.com">
+    <MailIcon class="size-4 md:size-6" />
+    Contactame
+  </Social>
+</nav>
