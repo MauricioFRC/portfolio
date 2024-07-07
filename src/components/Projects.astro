@@ -4,31 +4,42 @@ import CSharpIcon from "./icons/CSharpIcon.astro";
 import IntellijIDEAIcon from "./icons/IntelliJIDEAIcon.astro";
 import JavaIcon from "./icons/JavaIcon.astro";
 import MySqlIcon from "./icons/MySqlIcon.astro";
+import WordPressIcon from "./icons/WordPressIcon.astro";
+import ElementorIcon from "./icons/ElementorIcon.astro";
 import IconContainer from "./icons/IconContainer.astro";
 
+const globalIconsClasses = "text-white items-center gap-x-1";
+const marcandoPasos = "../projects/marcandopasos.png";
+
 const TAGS = {
+  WORDPRESS: {
+    name: "WordPress",
+    class: globalIconsClasses,
+    icon: WordPressIcon,
+  },
+  ELEMENTOR: {
+    name: "Elementor",
+    class: globalIconsClasses,
+    icon: ElementorIcon,
+  },
   JAVA: {
     name: "Java",
-    class:
-      "text-black filter hover:drop-shadow-cs transition duration-100 ease-in-out",
+    class: globalIconsClasses,
     icon: JavaIcon,
   },
   IDEA: {
     name: "Idea",
-    class:
-      "text-black filter hover:drop-shadow-cs transition duration-100 ease-in-out",
+    class: globalIconsClasses,
     icon: IntellijIDEAIcon,
   },
   CSHARP: {
     name: "CSharp",
-    class:
-      "text-white filter hover:drop-shadow-cs transition duration-100 ease-in-out",
+    class: globalIconsClasses,
     icon: CSharpIcon,
   },
   MYSQL: {
-    name: "MySQL",
-    class:
-      "text-black filter hover:drop-shadow-xl transition duration-100 ease-in-out",
+    name: "",
+    class: globalIconsClasses,
     icon: MySqlIcon,
   },
 };
@@ -36,11 +47,19 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "CRUD",
-    description: "Crud usando C#, MySQL y Windows Forms",
-    link: "#",
+    description: "CRUD WinUI",
+    link: "https://github.com/MauricioFRC",
     github: "https://github.com/MauricioFRC/MauricioFRC",
     image: "",
     tags: [TAGS.CSHARP, TAGS.MYSQL],
+  },
+  {
+    title: "Marcando Pasos",
+    description:
+      "Marcando Pasos es una web hecha a medida para una asociación sin fines de lucro",
+    link: "https://www.marcandopasos.org.py/",
+    image: marcandoPasos,
+    tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR],
   },
 ];
 ---
@@ -48,22 +67,18 @@ const PROJECTS = [
 {
   PROJECTS.map(({ image, title, description, tags }) => (
     <article>
-      <h3 class="text-2xl font-semibold text-blue-400 mb-2">{title}</h3>
+      <h3 class="text-2xl font-semibold text-blue-400">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
-      <img
-        class="rounded shadow-2xl shadow-white/10"
-        src={image}
-        alt={`Imágen del proyecto ${image}`}
-      />
+      <img class="rounded" src={image} alt={`Imágen del proyecto ${image}`} />
       <ul class="flex flex-row mb-2 gap-x-2 pt-5">
         {tags.map((tag) => (
-          <li>
-            <span class={`flex gap-x-2 text-xs ${tag.class} py-1 px-2 `}>
-              <IconContainer>
+          <li class="mb-14">
+            <Badge>
+              <span class={`flex gap-x-2${tag.class}`}>
                 <tag.icon class="size-6" />
                 {tag.name}
-              </IconContainer>
-            </span>
+              </span>
+            </Badge>
           </li>
         ))}
       </ul>
