@@ -1,12 +1,12 @@
 ---
 import Badge from "../components/Badge.astro";
 import CSharpIcon from "./icons/CSharpIcon.astro";
+import ElementorIcon from "./icons/ElementorIcon.astro";
 import IntellijIDEAIcon from "./icons/IntelliJIDEAIcon.astro";
 import JavaIcon from "./icons/JavaIcon.astro";
+import MSQLSERVERIcon from "./icons/msql.astro";
 import MySqlIcon from "./icons/MySqlIcon.astro";
 import WordPressIcon from "./icons/WordPressIcon.astro";
-import ElementorIcon from "./icons/ElementorIcon.astro";
-import IconContainer from "./icons/IconContainer.astro";
 
 const globalIconsClasses = "text-white items-center gap-x-1";
 const marcandoPasos = "../projects/marcandopasos.png";
@@ -42,21 +42,27 @@ const TAGS = {
     class: globalIconsClasses,
     icon: MySqlIcon,
   },
+  SQLSERVER: {
+    name: "MSSQL",
+    class: globalIconsClasses,
+    icon: MSQLSERVERIcon,
+  },
 };
 
 const PROJECTS = [
   {
     title: "CRUD",
-    description: "CRUD WinUI",
+    description:
+      "En este proyecto utilice tecnologias de Microsoft, los famosos Windows Forms acompañado del gestor de base de datos Microsoft SQL Server",
     link: "https://github.com/MauricioFRC",
     github: "https://github.com/MauricioFRC/MauricioFRC",
     image: "",
-    tags: [TAGS.CSHARP, TAGS.MYSQL],
+    tags: [TAGS.CSHARP, TAGS.SQLSERVER],
   },
   {
     title: "Marcando Pasos",
     description:
-      "Marcando Pasos es una web hecha a medida para una asociación sin fines de lucro",
+      'El proyecto "Marcando Pasos" fue un proyecto hecho a medida para un centro de Rehabilitación privada sin fines de lucro que ofrece servicios de rehabilitación.',
     link: "https://www.marcandopasos.org.py/",
     image: marcandoPasos,
     tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR],
@@ -65,12 +71,13 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags }) => (
+  PROJECTS.map(({ image, title, description, tags, link }) => (
     <article>
       <h3 class="text-2xl font-semibold text-blue-400">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
       <img class="rounded" src={image} alt={`Imágen del proyecto ${image}`} />
       <ul class="flex flex-row mb-2 gap-x-2 pt-5">
+        <a href={link}>Enlace del Proyecto</a>
         {tags.map((tag) => (
           <li class="mb-14">
             <Badge>
