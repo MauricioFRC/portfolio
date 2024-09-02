@@ -1,15 +1,20 @@
 ---
-import Badge from "../components/Badge.astro";
+import Badge from "@/components/Badge.astro";
 import CSharpIcon from "./icons/CSharpIcon.astro";
 import ElementorIcon from "./icons/ElementorIcon.astro";
 import IntellijIDEAIcon from "./icons/IntelliJIDEAIcon.astro";
 import JavaIcon from "./icons/JavaIcon.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
 import MSQLSERVERIcon from "./icons/msql.astro";
 import MySqlIcon from "./icons/MySqlIcon.astro";
+import OracleApexIcon from "./icons/Apex.astro";
+import PLSQLIcon from "./icons/PLSQL.astro";
+import PostgresqlIcon from "./icons/Postgresql.astro";
 import WordPressIcon from "./icons/WordPressIcon.astro";
 
 const globalIconsClasses = "text-white items-center gap-x-1";
-const marcandoPasos = "../projects/marcandopasos.png";
+const marcandoPasosImage = "../projects/marcandopasos.png";
+const oracleApexApp = "../projects/apex/Screenshot_1.png";
 
 const TAGS = {
   WORDPRESS: {
@@ -47,9 +52,32 @@ const TAGS = {
     class: globalIconsClasses,
     icon: MSQLSERVERIcon,
   },
+  PLSQL: {
+    name: "Oracle PL SQL",
+    class: globalIconsClasses,
+    icon: PLSQLIcon,
+  },
+  POSTGRESQL: {
+    name: "Postgresql",
+    class: globalIconsClasses,
+    icon: PostgresqlIcon,
+  },
+  ORACLEAPEX: {
+    name: "Oracle Apex",
+    class: globalIconsClasses,
+    icon: OracleApexIcon,
+  },
 };
 
 const PROJECTS = [
+  {
+    title: "Sistema de Ventas",
+    description:
+      "Una pequeña aplicación construida en la plataforma de Oracle 'Apex', que registra productos, categoría de productos, clientes, ventas, etc.",
+    link: "https://oracleapex.com",
+    image: oracleApexApp,
+    tags: [TAGS.ORACLEAPEX, TAGS.PLSQL],
+  },
   {
     title: "CRUD",
     description:
@@ -57,14 +85,14 @@ const PROJECTS = [
     link: "https://github.com/MauricioFRC",
     github: "https://github.com/MauricioFRC/MauricioFRC",
     image: "",
-    tags: [TAGS.CSHARP, TAGS.SQLSERVER],
+    tags: [TAGS.CSHARP, TAGS.POSTGRESQL],
   },
   {
     title: "Marcando Pasos",
     description:
-      'El proyecto "Marcando Pasos" fue un proyecto hecho a medida para un centro de Rehabilitación privada sin fines de lucro que ofrece servicios de rehabilitación.',
+      'El proyecto "Marcando Pasos" fue un proyecto hecho a medida para un centro de Rehabilitación privada sin fines de lucro que ofrece servicios de rehabilitación para personas con "Capacidades Diferentes Marcando Pasos".',
     link: "https://www.marcandopasos.org.py/",
-    image: marcandoPasos,
+    image: marcandoPasosImage,
     tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR],
   },
 ];
@@ -75,9 +103,30 @@ const PROJECTS = [
     <article>
       <h3 class="text-2xl font-semibold text-blue-400">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
-      <img class="rounded" src={image} alt={`Imágen del proyecto ${image}`} />
-      <ul class="flex flex-row mb-2 gap-x-2 pt-5">
-        <a href={link}>Enlace del Proyecto</a>
+      <img class="rounded-2xl" src={image} alt={`Imágen del proyecto ${image}`} />
+      <ul class="mb-2 inline-flex flex-row gap-x-2 pt-5 items-center">
+        <a
+          href={link}
+          target="_blank"
+          class="inline-flex items-center px-4 py-2 mb-14 mx-1 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+        >
+          Enlace del Proyecto{" "}
+          <svg
+            class="w-3 h-3 ms-2 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </a>
         {tags.map((tag) => (
           <li class="mb-14">
             <Badge>
