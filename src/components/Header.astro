@@ -1,6 +1,11 @@
 ---
 const navItems = [
   {
+    title: "Inicio",
+    label: "inicio",
+    url: "/#inicio",
+  },
+  {
     title: "Experiencia",
     label: "experiencia",
     url: "/#experiencia",
@@ -15,26 +20,21 @@ const navItems = [
     label: "sobre-mi",
     url: "/#sobre-mi",
   },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:mauricio.ramirez.cardozo0@gmail.com",
-  },
 ];
 ---
 
 <header
-  class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto sticky top-0 z-10"
+  class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto sticky top-0 z-10 font-bold"
 >
   <nav
     class="backdrop-blur flex flex-row sm:gap-x-5 lg:gap-x-8 xl:gap-x-10 gap-x-3 rounded-full
-    py-1 px-8 items-center bg-white/40"
+    py-1 px-8 items-center bg-black/80 drop-shadow-header"
   >
     {
       navItems.map((link) => (
         <a
           href={link.url}
-          class="text-sm py-1 relative blocktransition hover:text-blue-700 dark:hover:text-blue-700"
+          class="text-sm py-1 relative blocktransition hover:text-blue-400 dark:hover:text-blue-400"
           aria-label={link.label}
         >
           {link.title}

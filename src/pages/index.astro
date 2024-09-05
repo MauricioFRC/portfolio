@@ -1,17 +1,19 @@
 ---
 import BriefcaseIcon from "@/components/icons/BriefcaseIcon.astro";
 import CodeIcon from "@/components/icons/CodeIcon.astro";
+import Button from "@/components/Button.astro";
 import Experience from "@/components/Experience.astro";
 import Glow from "@/components/icons/Glow.astro";
 import Hero from "@/components/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
 import Projects from "@/components/Projects.astro";
 import Section from "@/components/Section.astro";
+import Stack from "@/components/Stack.astro";
 ---
 
 <Layout title="Portafolio Mauricio Ramírez">
   <main class="px-4">
-    <Section class="py-44 pb-20">
+    <Section id="inicio" class="py-44 pb-20">
       <Hero />
     </Section>
 
@@ -35,11 +37,53 @@ import Section from "@/components/Section.astro";
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
         Sobre mí
       </h2>
+      <article class="text-pretty text-xl">
+        ¡Hola! mi nombre es <span class="font-bold text-blue-400"
+          >Mauricio Ramírez 👋</span
+        >, soy un desarrollador Junior, y estudiante de Ingeniería en
+        Informática en la Universidad del Cono Sur de las Américas, y me
+        apasiona el desarrollo frontend y backend.
+      </article>
+      <article class="text-pretty text-xl pt-5">
+        Me gusta construir sistemas y soluciones eficientes que hacen realmente
+        la diferencia. Estoy constantemente aprendiendo y buscando formas de
+        mejorar mis habilidades como programador.
+      </article>
+      <article class="text-pretty text-xl pt-5 pb-8">
+        Para mi el software no es solo código, sino una herramienta poderosa que
+        transforman ideas en realidades. Si quieres visitar en los proyectos que
+        he trabajado te invito a visitar mi perfil de GitHub, en donde
+        encontraras una breve descripción de ellos, si tienes preguntas o
+        quieres contactarme, puedes escribirme a mi correo electronico <a
+          class="hover:underline hover:underline-offset-8 decoration-wavy
+          decoration-yellow-400 cursor-pointer text-yellow-400"
+          href="mailto:mauricio.ramirez.cardozo0@gmail.com"
+          >mauricio.ramirez.cardozo0@gmail.com</a
+        >
+      </article>
+      <Button>
+        <a href="/public/cv.pdf" target="_blank">Descargar CV</a>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-download"
+          ><path d="M0 0h24v24H0z" stroke="none"></path><path
+            d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 11l5 5 5-5M12 4v12"
+          ></path></svg
+        >
+      </Button>
     </Section>
 
-    <Section id="contacto">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        Contacto
+    <Section id="stack">
+      <h2 class="text-3xl font-semibold gap-x-3">
+        Stack
+        <Stack />
       </h2>
     </Section>
   </main>
