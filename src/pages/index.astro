@@ -1,15 +1,14 @@
 ---
 import AboutMe from "@/components/AboutMe.astro";
 import BriefcaseIcon from "@/components/icons/BriefcaseIcon.astro";
-import Button from "@/components/Button.astro";
 import CodeIcon from "@/components/icons/CodeIcon.astro";
 import Experience from "@/components/Experience.astro";
-import Glow from "@/components/icons/Glow.astro";
 import Hero from "@/components/Hero.astro";
 import Layout from "@/layouts/Layout.astro";
 import Projects from "@/components/Projects.astro";
 import Section from "@/components/Section.astro";
 import Stack from "@/components/Stack.astro";
+import PersonalExperience from "@/components/PersonalExperience.astro";
 ---
 
 <Layout title="Portafolio Mauricio Ramírez">
@@ -18,12 +17,20 @@ import Stack from "@/components/Stack.astro";
       <Hero />
     </Section>
 
-    <Section id="experiencia">
+    <Section id="experiencia-laboral">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7" />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </Section>
+
+    <Section id="experiencia-personal">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
         <BriefcaseIcon class="size-7" />
         Experiencia Personal
       </h2>
-      <Experience />
+      <PersonalExperience />
     </Section>
 
     <Section id="proyectos">

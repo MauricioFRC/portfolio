@@ -1,0 +1,44 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const personalExperience = [
+  {
+    date: "Actualmente En Desarrollo",
+    title: "React Shop with Asp.Net Core and PostgreSQL",
+    description:
+      "Una pequeña aplicación de administración de productos y ventas, aun sigue en el desarrollo.",
+    link: "",
+  },
+  {
+    date: "27/12/2024 - Actualmente en Desarrollo",
+    title: "Personal Expense Management - Clean Architecture",
+    description:
+      "API REST para la Gestión de Gastos Personales, permite gestionar todos los gastos hechos por el usuario con Arquitectura Limpia.",
+    link: "",
+  },
+  {
+    date: "20/12/2024",
+    title: "Personal Expense Management - MVC",
+    description:
+      "API REST para la Gestión de Gastos Personales, permite gestionar todos los gastos hechos por el usuario con la arquitectura MVC.",
+    link: "https://github.com/MauricioFRC/Personal_Expense_Management",
+  },
+  {
+    date: "21/11/2024",
+    title: "Bank Management",
+    description:
+      "Una API que se encarga de gestionar prestamos a usuarios, también permite realizar simulaciones de prestamos para tener una idea de cuanto seria el interest segun el monto del prestamo.",
+    link: "https://github.com/MauricioCLT/BankManagement",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-2">
+  {
+    personalExperience.map((personalExperience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...personalExperience} />
+      </li>
+    ))
+  }
+</ol>
